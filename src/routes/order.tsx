@@ -4,6 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 import { PreorderForm } from "@/components/preorder-form";
 import { LedCounter } from "@/components/led-counter";
 import { countPreorders } from "@/lib/preorders";
+import { ShopPhoto } from "@/lib/shop-photo";
 
 export const Route = createFileRoute("/order")({
   head: () => ({
@@ -37,8 +38,8 @@ function OrderPage() {
             <LedCounter value={count} />
           </div>
           <figure className="photo-frame mt-8 rounded-lg p-2.5">
-            <img
-              src="/images/oven.jpg"
+            <ShopPhoto
+              name="oven.jpg"
               alt="Cheese pizza pulled from a deck oven"
               className="aspect-3/2 w-full rounded-md object-cover"
             />

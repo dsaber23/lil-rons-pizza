@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
+import { ShopPhoto } from "@/lib/shop-photo";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({
@@ -25,15 +26,15 @@ function MenuPage() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           <figure className="photo-frame rounded-lg p-2.5">
-            <img
-              src="/images/oven.jpg"
+            <ShopPhoto
+              name="oven.jpg"
               alt="A cheese pizza coming out of a glowing deck oven"
               className="aspect-3/2 w-full rounded-md object-cover"
             />
           </figure>
           <figure className="photo-frame rounded-lg p-2.5">
-            <img
-              src="/images/slice-fold.jpg"
+            <ShopPhoto
+              name="slice-fold.jpg"
               alt="Folded New York slice"
               className="aspect-3/2 w-full rounded-md object-cover"
             />

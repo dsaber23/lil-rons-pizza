@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
+import { ShopPhoto } from "@/lib/shop-photo";
 
 export const Route = createFileRoute("/story")({
   head: () => ({
@@ -13,8 +14,8 @@ function StoryPage() {
     <SiteShell>
       <article className="px-5 py-10 sm:px-8 sm:py-14">
         <div className="grid items-start gap-8 md:grid-cols-[0.8fr_1.2fr]">
-          <img
-            src="/images/ron-mascot.jpg"
+          <ShopPhoto
+            name="ron-mascot.jpg"
             alt="Illustrated mascot of Ron holding a folded slice"
             className="mx-auto w-56 rounded-[28px] md:w-full"
           />
@@ -60,8 +61,8 @@ function StoryPage() {
         </div>
 
         <figure className="photo-frame mt-10 rounded-lg p-2.5">
-          <img
-            src="/images/porch.jpg"
+          <ShopPhoto
+            name="porch.jpg"
             alt="Pizza box on a wet Seattle porch"
             className="aspect-16/9 w-full rounded-md object-cover"
           />
