@@ -57,8 +57,9 @@
     min-height: 100dvh;
     color: var(--color-ink);
     background-color: var(--color-paper);
-    background-image: url("/images/tablecloth.jpg");
-    background-size: 340px 340px;
+    background-image: url("/images/tablecloth.jpg"),
+      repeating-conic-gradient(#f3dfc0 0% 25%, #c51f2a 0% 50%);
+    background-size: 340px 340px, 28px 28px;
     font-family: var(--font-body);
     line-height: 1.55;
   }
@@ -89,6 +90,7 @@
   }
 }
 
+/* Laminated menu sitting on the tablecloth */
 .stage {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 42px),
