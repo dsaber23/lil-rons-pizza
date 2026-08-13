@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import { LedCounter } from "@/components/led-counter";
 import { countPreorders } from "@/lib/preorders";
+import { ShopPhoto } from "@/lib/shop-photo";
 
 export const Route = createFileRoute("/")({
   loader: () => countPreorders(),
@@ -58,8 +59,8 @@ function Home() {
         </div>
 
         <figure className="photo-frame mt-8 rounded-lg p-2.5 sm:p-3">
-          <img
-            src="/images/pie-hero.jpg"
+          <ShopPhoto
+            name="pie-hero.jpg"
             alt="A classic New York cheese pizza on a metal peel, leopard-spotted crust and melted mozzarella"
             className="aspect-4/3 w-full rounded-md object-cover"
           />
@@ -86,8 +87,8 @@ function Home() {
 
       <section className="grid items-center gap-8 border-t border-ink/10 bg-cream-dark/40 px-5 py-12 sm:grid-cols-2 sm:px-8">
         <figure className="photo-frame rounded-lg p-2.5">
-          <img
-            src="/images/slice-fold.jpg"
+          <ShopPhoto
+            name="slice-fold.jpg"
             alt="A New York slice folded in a hand over a paper plate"
             className="aspect-4/3 w-full rounded-md object-cover"
           />
@@ -114,8 +115,8 @@ function Home() {
       </section>
 
       <section className="grid items-center gap-8 px-5 py-12 sm:grid-cols-[0.9fr_1.1fr] sm:px-8">
-        <img
-          src="/images/ron-mascot.jpg"
+        <ShopPhoto
+          name="ron-mascot.jpg"
           alt="Illustrated mascot of Ron, a mustached pizza cook holding a folded slice"
           className="mx-auto w-56 rounded-[28px] sm:w-64"
         />
@@ -141,8 +142,8 @@ function Home() {
       </section>
 
       <section className="relative overflow-hidden">
-        <img
-          src="/images/porch.jpg"
+        <ShopPhoto
+          name="porch.jpg"
           alt="A pizza box on a rainy Northeast Seattle porch at dusk"
           className="aspect-16/9 w-full object-cover sm:aspect-21/9"
         />
