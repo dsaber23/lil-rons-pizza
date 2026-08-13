@@ -6,6 +6,8 @@ Coming-soon site for **Lil Ron’s** — NY / NJ thin crust landing in Northeast
 
 Public repo: [github.com/dsaber23/lil-rons-pizza](https://github.com/dsaber23/lil-rons-pizza)
 
+Hey Ron — this is the whole shop site. Clone it, run it locally, then import the repo into Vercel when you want it live.
+
 ## What’s here
 
 - Home, the pie, Ron’s story, and pre-order pickup
@@ -15,7 +17,7 @@ Public repo: [github.com/dsaber23/lil-rons-pizza](https://github.com/dsaber23/li
 
 ## Run it locally
 
-You need Node 22+.
+You need **Node 22+**.
 
 ```bash
 git clone https://github.com/dsaber23/lil-rons-pizza.git
@@ -24,18 +26,20 @@ npm install
 npm run dev
 ```
 
-`npm install` decodes the pizza photos into `public/`. Then open the site — the dev server listens on port 8080.
+Then open the URL the terminal prints (port 8080).
 
 ```bash
 npm run typecheck
 npm run build
 ```
 
-## Deploy on Vercel (the easy path)
+Photos decode automatically on `npm install`. If a local photo is missing, the site falls back to a hosted pizza shot so the pages still look complete.
 
-1. Go to [vercel.com/new](https://vercel.com/new) and import `dsaber23/lil-rons-pizza`.
-2. Framework preset can stay **Other** / Vite. Build command is already `npm run build`. Output is handled by the Nitro Vercel preset.
-3. (Recommended) Add a Postgres database so pre-orders survive deploys:
+## Deploy on Vercel
+
+1. Go to [vercel.com/new](https://vercel.com/new) and import **`dsaber23/lil-rons-pizza`**.
+2. Framework preset can stay **Other** / Vite. Build command is already `npm run build`.
+3. **Recommended:** add Postgres so pre-orders survive deploys:
    - Create a free [Neon](https://neon.tech) project
    - In Vercel → Project → Settings → Environment Variables, add `DATABASE_URL` with the Neon connection string
 4. Deploy. First load may take a few seconds.
