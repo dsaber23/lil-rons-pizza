@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import { LedCounter } from "@/components/led-counter";
+import { HandTally } from "@/components/hand-tally";
+import { Polaroid } from "@/components/polaroid";
 import { countPreorders } from "@/lib/preorders";
 import { ShopPhoto } from "@/lib/shop-photo";
 
@@ -10,7 +11,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const preorders = Route.useLoaderData();
+  const names = Route.useLoaderData();
 
   return (
     <SiteShell>
@@ -18,7 +19,7 @@ function Home() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0 flex-1">
             <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.22em] text-tomato">
-              A new slice shop · Northeast Seattle
+              A family slice shop · Northeast Seattle
             </p>
             <h1 className="mt-3 max-w-xl font-display text-[2.6rem] leading-[0.95] text-ink sm:text-6xl">
               Thin crust.
@@ -26,35 +27,41 @@ function Home() {
               Thick accent.
             </h1>
             <p className="mt-4 max-w-lg text-lg font-semibold text-ink-soft">
-              Lil Ron's is a NY / NJ pie landing in the Pacific Northwest.
-              Classic plain. Slices or whole pies. Pre-order pickup when the oven
-              is hot.
+              Lil Ron's is the family pie — Big Ron's dough, Grandma's sauce,
+              the same classic plain they folded in Jersey. Coming soon to
+              Northeast Seattle. Slices or whole pies. You leave a name. You
+              pick up a box.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
                 to="/order"
                 className="gloss-btn inline-flex min-h-12 items-center rounded-pill px-6 py-3 text-base font-extrabold no-underline"
               >
-                Pre-order pickup
+                Put your name down
               </Link>
               <Link
                 to="/story"
                 className="gloss-btn gloss-btn-ghost inline-flex min-h-12 items-center rounded-pill px-6 py-3 text-base font-extrabold no-underline"
               >
-                Meet Ron
+                Meet the family
               </Link>
             </div>
             <div className="mt-6">
-              <LedCounter value={preorders} />
+              <HandTally value={names} />
             </div>
           </div>
-          <div
-            aria-hidden
-            className="starburst order-first mx-auto grid size-28 shrink-0 place-items-center sm:order-none sm:mx-0 sm:size-32"
-          >
-            <span className="max-w-20 text-center font-display text-[0.7rem] leading-tight sm:text-xs">
-              Coming Soon
-            </span>
+          <div className="order-first mx-auto sm:order-none sm:mx-0">
+            <div className="window-sign">
+              <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.18em] text-tomato">
+                Northeast Seattle
+              </p>
+              <p className="font-note mt-1 text-[1.85rem] leading-none text-ink">
+                Opening soon
+              </p>
+              <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-ink-faint">
+                Leave a name
+              </p>
+            </div>
           </div>
         </div>
 
@@ -65,45 +72,71 @@ function Home() {
             className="aspect-4/3 w-full rounded-md object-cover"
           />
         </figure>
+        <p className="font-note mt-3 text-center text-xl text-ink-soft">
+          Same pie Grandpa taught standing on a milk crate.
+        </p>
       </section>
 
       <section className="grid gap-3 px-5 pb-10 sm:grid-cols-3 sm:px-8">
         <Feature
           kicker="The fold"
           title="NY / NJ style"
-          copy="Thin enough to fold, sturdy enough to survive a Seattle drizzle. No fork. No therapy."
+          copy="Thin enough to fold, sturdy enough for a Seattle drizzle. No fork. That's how the family eats it."
         />
         <Feature
           kicker="The menu"
           title="Classic plain"
-          copy="Crushed tomato, low-moisture mozzarella, a little char. Ron is starting with the one that matters."
+          copy="Grandma's crushed tomato, low-moisture mozzarella, a little char. We start with the one that matters."
         />
         <Feature
           kicker="The deal"
-          title="Pre-order pickup"
-          copy="Limited hours. You order ahead. We email a window. You walk out with a box still ticking."
+          title="Leave a name"
+          copy="No app. No QR. Limited hours. You write it down, we call when the oven's hot, you walk out with a box."
         />
       </section>
 
       <section className="grid items-center gap-8 border-t border-ink/10 bg-cream-dark/40 px-5 py-12 sm:grid-cols-2 sm:px-8">
-        <figure className="photo-frame rounded-lg p-2.5">
+        <Polaroid caption="The family, Jersey kitchen, sometime in the '90s." tilt="-2deg">
           <ShopPhoto
-            name="slice-fold.jpg"
-            alt="A New York slice folded in a hand over a paper plate"
-            className="aspect-4/3 w-full rounded-md object-cover"
+            name="family.jpg"
+            alt="Three generations of the family around a cheese pizza in a warm pizzeria kitchen"
+            className="aspect-4/3 w-full object-cover"
           />
-        </figure>
+        </Polaroid>
+        <div>
+          <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.2em] text-tomato">
+            Three generations
+          </p>
+          <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">
+            Named after Lil Ron. Run by the whole crew.
+          </h2>
+          <p className="mt-3 font-semibold text-ink-soft">
+            Big Ron had the slice window. Grandma had the sauce. Lil Ron
+            packed the recipe west so Seattle could have an honest fold.
+            Kids on the stool. Cousins on the counter. Nobody here is
+            building an app.
+          </p>
+          <Link
+            to="/story"
+            className="mt-4 inline-block font-extrabold text-tomato no-underline hover:underline"
+          >
+            Read the family story →
+          </Link>
+        </div>
+      </section>
+
+      <section className="grid items-center gap-8 px-5 py-12 sm:grid-cols-2 sm:px-8">
         <div>
           <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.2em] text-tomato">
             The only pie on purpose
           </p>
           <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">
-            One classic. Done right.
+            One classic. The way we learned it.
           </h2>
           <p className="mt-3 font-semibold text-ink-soft">
-            If Ron only does one thing in this town, it's the plain slice
-            he grew up folding on a paper plate. More pies later — when he
-            feels like it.
+            If this family only does one thing in this town, it's the plain
+            slice we grew up folding on a paper plate. More pies later —
+            when Grandma says so.
           </p>
           <Link
             to="/menu"
@@ -112,33 +145,26 @@ function Home() {
             See the pie
           </Link>
         </div>
+        <figure className="photo-frame rounded-lg p-2.5">
+          <ShopPhoto
+            name="slice-fold.jpg"
+            alt="A New York slice folded in a hand over a paper plate"
+            className="aspect-4/3 w-full rounded-md object-cover"
+          />
+        </figure>
       </section>
 
-      <section className="grid items-center gap-8 px-5 py-12 sm:grid-cols-[0.9fr_1.1fr] sm:px-8">
-        <ShopPhoto
-          name="ron-mascot.jpg"
-          alt="Illustrated mascot of Ron, a mustached pizza cook holding a folded slice"
-          className="mx-auto w-56 rounded-[28px] sm:w-64"
-        />
-        <div>
-          <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.2em] text-tomato">
-            Jersey soul · PNW transplant
+      <section className="px-5 pb-10 sm:px-8">
+        <aside className="paper-note mx-auto max-w-xl px-5 py-4">
+          <p className="font-note text-2xl leading-snug text-ink">
+            A cousin put this on the computer because none of us wanted to
+            learn it. If you need us, leave a name. We still prefer the
+            phone — once we have one on the wall.
           </p>
-          <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">
-            Ron left the Turnpike. The cheese came with him.
-          </h2>
-          <p className="mt-3 font-semibold text-ink-soft">
-            He moved for the mountains. He stayed because Seattle still
-            deserved an honest fold. Proud of both coasts. Unreasonable about
-            crust.
+          <p className="mt-2 text-right font-note text-xl text-ink-soft">
+            — the family
           </p>
-          <Link
-            to="/story"
-            className="mt-4 inline-block font-extrabold text-tomato no-underline hover:underline"
-          >
-            Read the whole bit →
-          </Link>
-        </div>
+        </aside>
       </section>
 
       <section className="relative overflow-hidden">
@@ -156,7 +182,7 @@ function Home() {
           </p>
           <p className="mt-2 max-w-md text-sm font-semibold text-cream/80">
             Exact address drops with the first pies. Hours stay limited on
-            purpose. Pre-order, pick up, walk home in the drizzle.
+            purpose. Leave a name, pick up, walk home in the drizzle.
           </p>
         </div>
       </section>
