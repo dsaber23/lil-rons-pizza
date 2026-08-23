@@ -34,7 +34,7 @@ export function PreorderForm({
           notes: notes || undefined,
         },
       });
-      toast.success("You're on the list. Ron will email a pickup window.");
+      toast.success("You're on the pad. We'll call a pickup window.");
       onSuccess?.(item, quantity);
     } catch (err) {
       const message =
@@ -53,13 +53,13 @@ export function PreorderForm({
           selected={item === "slice"}
           onSelect={() => setItem("slice")}
           title="A slice"
-          copy="The walk-home fold. One triangle, maximum opinions."
+          copy="The walk-home fold. One triangle. That's how the family eats it."
         />
         <Choice
           selected={item === "pie"}
           onSelect={() => setItem("pie")}
           title="A whole pie"
-          copy="Classic plain. Feeds the house. Starts arguments."
+          copy="Classic plain. Feeds the house and whoever followed the smell."
         />
       </div>
 
@@ -91,7 +91,10 @@ export function PreorderForm({
       </label>
 
       <label className="grid gap-1.5 text-sm font-extrabold text-ink-soft">
-        Email — we'll send the pickup window
+        Email{" "}
+        <span className="font-semibold text-ink-faint">
+          (if the phone misses us)
+        </span>
         <input
           required
           type="email"
@@ -103,9 +106,10 @@ export function PreorderForm({
       </label>
 
       <label className="grid gap-1.5 text-sm font-extrabold text-ink-soft">
-        Phone <span className="font-semibold text-ink-faint">(optional)</span>
+        Phone — we'll call when the pie is ready
         <input
           type="tel"
+          required
           className="field h-12 rounded-md px-3 text-base font-semibold"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
@@ -114,8 +118,10 @@ export function PreorderForm({
       </label>
 
       <label className="grid gap-1.5 text-sm font-extrabold text-ink-soft">
-        Notes for Ron{" "}
-        <span className="font-semibold text-ink-faint">(well done? extra hot?)</span>
+        Notes for the family{" "}
+        <span className="font-semibold text-ink-faint">
+          (well done? extra hot? feeding the cousins?)
+        </span>
         <textarea
           className="field min-h-24 rounded-md px-3 py-2 text-base font-semibold"
           value={notes}
@@ -135,10 +141,11 @@ export function PreorderForm({
         disabled={busy}
         className="gloss-btn min-h-12 rounded-pill px-6 py-3.5 text-lg font-extrabold disabled:opacity-70"
       >
-        {busy ? "Filing the ticket…" : "Lock in my pre-order"}
+        {busy ? "Writing it down…" : "Add us to the list"}
       </button>
       <p className="text-center text-xs font-semibold text-ink-faint">
-        No payment today. No delivery. Pickup only, when Ron lights the oven.
+        No payment today. No delivery. No app. Pickup only, when the family
+        lights the oven.
       </p>
     </form>
   );
