@@ -12,6 +12,12 @@ const FALLBACK: Record<string, string> = {
     "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=70",
   "ron-mascot.jpg":
     "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=700&q=70",
+  "family.jpg":
+    "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=70",
+  "recipe.jpg":
+    "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=70",
+  "grandpa.jpg":
+    "https://images.unsplash.com/photo-1571997478779-2adcb19ea23c?auto=format&fit=crop&w=700&q=70",
 };
 
 type ShopPhotoName = keyof typeof FALLBACK;

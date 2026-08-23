@@ -40,7 +40,7 @@ export function PizzaLogo({
         </span>
         {!compact ? (
           <span className="mt-0.5 block text-[0.68rem] font-extrabold uppercase tracking-[0.22em] text-ink-faint">
-            Pizza · Seattle
+            Family pie · Seattle
           </span>
         ) : null}
       </span>

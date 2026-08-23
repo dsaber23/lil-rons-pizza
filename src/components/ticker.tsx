@@ -1,11 +1,11 @@
 const ITEMS = [
-  "Coming soon to Northeast Seattle",
-  "NY / NJ thin crust",
-  "Slices or whole pies",
-  "Pre-order pickup only",
-  "Fold it. Don't fight it.",
-  "Limited hours. Unlimited opinions.",
-  "Ron left the Turnpike. The cheese came with him.",
+  "A family pie · Northeast Seattle",
+  "Big Ron's dough. Lil Ron's oven.",
+  "Three generations. One classic plain.",
+  "No app. No QR. Leave your name.",
+  "Slices or whole pies · pickup only",
+  "Thin crust. Thick accent.",
+  "The cousin typed this. We still prefer the phone.",
 ];
 
 export function Ticker() {
