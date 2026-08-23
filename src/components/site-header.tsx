@@ -2,14 +2,13 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { PizzaLogo } from "@/components/pizza-logo";
-import { AuthSlot } from "@/components/auth-slot";
 import { cn } from "@/lib/utils";
 
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "The Pie" },
-  { to: "/story", label: "Ron" },
-  { to: "/order", label: "Pre-Order" },
+  { to: "/story", label: "The Family" },
+  { to: "/order", label: "The List" },
 ] as const;
 
 export function SiteHeader() {
@@ -19,7 +18,7 @@ export function SiteHeader() {
   return (
     <header className="relative z-20">
       <div className="gloss-bar shine-sweep px-4 py-1.5 text-center text-[0.68rem] font-extrabold uppercase tracking-[0.2em] text-cream">
-        Est. 2026 · Northeast Seattle · NY / NJ Slice
+        Family pie · Northeast Seattle · No app. Just a box.
       </div>
       <div className="stage-nav flex items-center justify-between gap-3 border-b border-ink/10 px-4 py-3 sm:px-6">
         <PizzaLogo />
@@ -44,7 +43,6 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <AuthSlot />
         </nav>
         <button
           type="button"
@@ -72,9 +70,6 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <div className="px-3 py-2">
-            <AuthSlot />
-          </div>
         </nav>
       ) : null}
     </header>

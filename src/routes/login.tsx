@@ -14,13 +14,13 @@ function Login() {
         <div className="px-6 py-8">
           <PizzaLogo />
           <h1 className="mt-6 font-display text-3xl text-ink">
-            Ron's office
+            Family only
           </h1>
           <p className="mt-2 text-sm font-semibold text-ink-soft">
-            For the people who actually have to slice the pies. Regular
-            humans can{" "}
+            For the people who actually have to slice the pies. Everybody
+            else can{" "}
             <Link to="/order" className="font-extrabold text-tomato">
-              pre-order out front
+              leave a name out front
             </Link>
             .
           </p>

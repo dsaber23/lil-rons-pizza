@@ -7,11 +7,12 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-2xl text-gold">Lil Ron's</p>
           <p className="mt-1 text-[0.68rem] font-extrabold uppercase tracking-[0.22em] text-cream/50">
-            Pizza · Seattle
+            A family pie · Seattle
           </p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-cream/75">
-            Thin crust. Thick accent. A Jersey pie landing in Northeast Seattle
-            — slices, whole pies, pre-order pickup only.
+            Three generations. One classic plain. A Jersey kitchen that packed
+            up and moved west. We don't do apps, QR codes, or delivery guys.
+            You leave a name. You pick up a box.
           </p>
         </div>
         <div>
@@ -24,30 +25,34 @@ export function SiteFooter() {
             </li>
             <li>
               <Link to="/story" className="text-cream/80 no-underline hover:text-cream">
-                Why Ron left the Turnpike
+                Big Ron, Lil Ron, the rest of us
               </Link>
             </li>
             <li>
               <Link to="/order" className="text-cream/80 no-underline hover:text-cream">
-                Pre-order pickup
+                Put your name on the list
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <p className="font-display text-gold">Fine print</p>
+          <p className="font-display text-gold">How to reach us</p>
           <p className="mt-3 text-sm leading-relaxed text-cream/70">
-            Hours are limited and a little chaotic. Address drops with the
-            first pies. Instagram is coming, like everything else.
+            Phone number and address drop with the first pies. Until then,
+            write your name on the list. A cousin typed this website. If it
+            acts up, that's on him.
           </p>
-          <p className="mt-4 text-xs uppercase tracking-[0.16em] text-cream/45">
-            Best viewed at any size, folded once
+          <p className="mt-4 font-note text-xl text-gold-light">
+            No DoorDash. No Instagram. Fold it yourself.
           </p>
         </div>
       </div>
       <p className="mx-auto mt-10 max-w-5xl text-center text-xs text-cream/45">
-        © {new Date().getFullYear()} Lil Ron's Pizza. Fold responsibly.
-        No deep dish. No pineapple negotiations before coffee.
+        © {new Date().getFullYear()} The family behind Lil Ron's. Recipe older
+        than the website.{" "}
+        <Link to="/login" className="text-cream/35 no-underline hover:text-cream/70">
+          Family only
+        </Link>
       </p>
     </footer>
   );

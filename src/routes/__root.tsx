@@ -24,7 +24,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Lil Ron's — NY / NJ thin crust landing in Northeast Seattle. Thin crust. Thick accent. Coming soon. Pre-order pickup.",
+          "Lil Ron's — a family pie from Jersey, landing in Northeast Seattle. Thin crust. Thick accent. Coming soon. Pickup only. No app.",
       },
       { name: "apple-mobile-web-app-title", content: APP_NAME },
       { name: "theme-color", content: "#c51f2a" },
@@ -33,7 +33,7 @@ export const Route = createRootRoute({
       { property: "og:title", content: APP_NAME },
       {
         property: "og:description",
-        content: "Thin crust. Thick accent. Coming soon to Northeast Seattle.",
+        content: "A family pie. Thin crust. Thick accent. Coming soon to Northeast Seattle.",
       },
       ...(ogImage
         ? [
@@ -56,7 +56,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito:wght@400;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap",
       },
     ],
   }),
